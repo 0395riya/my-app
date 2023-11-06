@@ -1,20 +1,21 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" -->
+    <!-- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -24,11 +25,147 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="./assets/images/admin-icon.png">
+
+    <!-- Bootstrap Css -->
+    <link href="./assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="./assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+    <!-- custom-css-inc -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Oswald&display=swap" rel="stylesheet">
+    <link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/libs/spectrum-colorpicker2/spectrum.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/libs/%40chenfengyuan/datepicker/datepicker.min.css">
+    <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+
+    <!-- custom-css-inc -->
+
+
+    <style>
+        .skeleton {
+            background: #fff;
+            /* border: 1px solid; */
+            /* border-color: #e5e6e9 #dfe0e4 #d0d1d5; */
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+        }
+
+        .skeleton-wrapper-inner {
+            height: 170px;
+            padding: 15px;
+            position: relative;
+        }
+
+        .skeleton-wrapper-body div {
+            -webkit-animation-duration: 1s;
+            -webkit-animation-fill-mode: forwards;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-name: placeholderSkeleton;
+            background: #f6f7f8;
+            background-image: -webkit-gradient(linear, left center, right center, from(#f6f7f8), color-stop(.2, #edeef1), color-stop(.4, #f6f7f8), to(#f6f7f8));
+            background-image: -webkit-linear-gradient(left, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+            background-repeat: no-repeat;
+            background-size: 800px 104px;
+            height: 104px;
+            position: relative;
+        }
+
+        .skeleton-wrapper-body {
+            -webkit-animation-name: skeletonAnimate;
+            background-image: -webkit-gradient(linear, center top, center bottom, from(deg), color-stop(0, red), color-stop(.15, orange), color-stop(.3, yellow), color-stop(.45, green), color-stop(.6, blue), color-stop(.75, indigo), color-stop(.8, violet), to(red));
+            background-image: -webkit-linear-gradient(135deg, red 0%, orange 15%, yellow 30%, green 45%, blue 60%, indigo 75%, violet 80%, red 100%);
+            background-repeat: repeat;
+            background-size: 50% auto;
+        }
+
+        .skeleton-wrapper-body div {
+            position: absolute;
+            right: 15px;
+            left: 15px;
+            top: 15px;
+        }
+
+        div.skeleton-avatar {
+            height: 60px;
+            width: 60px;
+            border-radius: 60px;
+            right: auto;
+        }
+
+        div.skeleton-author {
+            top: 20px;
+            height: 20px;
+            left: 95px;
+            width: 150px;
+        }
+
+        div.skeleton-label {
+            left: 95px;
+            top: 50px;
+            height: 10px;
+            width: 100px;
+        }
+
+        div.skeleton-content-1,
+        div.skeleton-content-2,
+        div.skeleton-content-3 {
+            left: 15px;
+            right: 15px;
+            height: 10px;
+        }
+
+        div.skeleton-content-1 {
+            top: 100px;
+        }
+
+        div.skeleton-content-2 {
+            top: 120px;
+        }
+
+        div.skeleton-content-3 {
+            top: 140px;
+        }
+
+        @-webkit-keyframes placeholderSkeleton {
+            0% {
+                background-position: -468px 0;
+            }
+
+            100% {
+                background-position: 468px 0;
+            }
+        }
+
+        @-webkit-keyframes skeletonAnimate {
+            from {
+                background-position: top left;
+            }
+
+            to {
+                background-position: top right;
+            }
+        }
+    </style>
+
+    <title>Rozgar.com</title>
+</head>
+
+<body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">   </div>
+    
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,5 +176,33 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+
+    <!-- JAVASCRIPT -->
+     
+    <script src="./assets/libs/jquery/jquery.min.js"></script>
+    <script src="./assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="./assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="./assets/libs/node-waves/waves.min.js"></script>
+
+    <!-- App js -->
+    <script src="./assets/js/app.js"></script>
+    <script type="text/javascript">
+        window.addEventListener("keydown", function (e) {
+            //SHIFT + something
+             
+            if (e.altKey) {
+                switch (e.code) {
+
+                    case 'KeyL':
+                        localStorage.removeItem('tk.rozgar.com')
+                        window.location.href = "/lock-screen";
+                        break;
+
+                }
+            }
+        })
+    </script>
+</body>
+
 </html>
